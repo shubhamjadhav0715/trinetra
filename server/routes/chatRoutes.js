@@ -1,11 +1,10 @@
 import express from "express";
+import { chatWithAI, getChatHistory } from "../controllers/chatController.js";
+
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
-  res.json({
-    reply: "Trinetra AI is working 🔱"
-  });
-});
+router.post("/", chatWithAI);
+router.get("/history", getChatHistory);
 
 export default router;
